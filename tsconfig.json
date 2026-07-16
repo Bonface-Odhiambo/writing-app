@@ -23,7 +23,8 @@
       "@/context/*": ["./app/context/*"],
       "@/types/*": ["./app/types/*"],
       "@/hooks/*": ["./app/hooks/*"],
-      "@/services/*": ["./app/services/*"]
+      "@/services/*": ["./app/services/*"],
+      "@/lib/*": ["./app/lib/*"]
     },
     "baseUrl": ".",
     "target": "es5",
