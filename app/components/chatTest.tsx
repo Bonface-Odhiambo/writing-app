@@ -1,7 +1,7 @@
 // eclipse/app/components/ChatTest.tsx
 
 import { useEffect, useState } from 'react';
-import { useSocket } from '../context/socketContext';
+// import { useSocket } from '../context/socketContext';
 interface ChatMessage {
   id: string;
   content: string;
@@ -12,7 +12,10 @@ interface ChatMessage {
 }
 
 export default function ChatTest() {
-  const { socket, connected, userId } = useSocket();
+  // const { socket, connected, userId } = useSocket();
+  const socket = null;
+  const connected = false;
+  const userId = 'mock-user-id';
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const chatId = 'test-room';
@@ -23,35 +26,35 @@ export default function ChatTest() {
     }
     
     // Join chat with proper data structure
-    socket.emit('join_chat', {
-      chatId,
-      role: 'user'
-    });
+    // socket.emit('join_chat', {
+    //   chatId,
+    //   role: 'user'
+    // });
   
     // Listen for messages with proper typing
-    socket.on('receive_message', (data: ChatMessage) => {
-      setMessages((prev) => [...prev, data]);
-    });
+    // socket.on('receive_message', (data: ChatMessage) => {
+    //   setMessages((prev) => [...prev, data]);
+    // });
   
     // Cleanup function
     return () => {
-      socket.off('receive_message');
-      socket.emit('leave_chat', chatId);
+      // socket.off('receive_message');
+      // socket.emit('leave_chat', chatId);
     };
   }, [socket, chatId]);
   const sendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     if (message.trim() && socket && userId) {
       // Prepare message data according to SendMessageData interface
-      const messageData = {
-        chatId,
-        content: message.trim(),
-        recipientId: chatId, // In a group chat, this could be the room ID
-        messageType: 'text' as const
-      };
+      // const messageData = {
+      //   chatId,
+      //   content: message.trim(),
+      //   recipientId: chatId, // In a group chat, this could be the room ID
+      //   messageType: 'text' as const
+      // };
 
       // Send message with correct event and data structure
-      socket.emit('send_message', messageData);
+      // socket.emit('send_message', messageData);
       
       // Add message to local state
       const newMessage: ChatMessage = {
