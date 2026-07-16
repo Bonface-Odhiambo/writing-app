@@ -1,5 +1,5 @@
 export type ComponentConfig = {
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 export type KeywordConfig = {

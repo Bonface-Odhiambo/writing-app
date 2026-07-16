@@ -11,7 +11,7 @@ import CTA from "@/components/cta";
 import { getSEOTags } from "@/lib/seo";
 import { keywords } from "./keywords";
 import { redirect } from "next/navigation";
-import keywordConfigs from "./keywordConfig";
+// import keywordConfigs from "./keywordConfig";
 
 export const generateMetadata = ({
   params,
@@ -45,19 +45,19 @@ export default function KeywordPage({
     return redirect("/");
   }
   //Use the decoded keyword when needed
-  const decodedKeyword = decodeURIComponent(params.keyword).replace(/-/g, " ");
-  const config = keywordConfigs[params.keyword] || {};
+  // const decodedKeyword = decodeURIComponent(params.keyword).replace(/-/g, " ");
+  // const config = keywordConfigs[params.keyword] || {};
 
   return (
     <Container>
       <Header />
-      <Hero config={config.Hero} />
+      <Hero />
       <LogoClouds />
-      <AccordionFeatures config={config.AccordionFeatures} />
-      <BeforeAfter config={config.BeforeAfter} />
-      <Pricing config={config.Pricing} />
-      <FAQ config={config.FAQ} />
-      <CTA config={config.CTA} />
+      <AccordionFeatures />
+      <BeforeAfter />
+      <Pricing />
+      <FAQ />
+      <CTA />
       <Footer />
     </Container>
   );

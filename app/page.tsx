@@ -1,5 +1,4 @@
 // File: app/page.tsx
-import Link from 'next/link';
 import AccordionFeatures from "./components/accordion-features";
 import BeforeAfter from "./components/before-after";
 import { Container } from "./components/container";

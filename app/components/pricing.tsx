@@ -12,7 +12,7 @@ export default function Pricing() {
             </div>
           </div>
           <h2 className="mx-auto mb-8 max-w-xl text-3xl font-bold tracking-tight text-slate-800 lg:text-5xl">
-            Eclipse gives you boldness to deal with quality "headaches"
+            Eclipse gives you boldness to deal with quality &ldquo;headaches&rdquo;
           </h2>
           <div className="mx-auto max-w-md font-medium text-slate-500">
             Save hours on contemplating where to get and manage proven writers, and focus
