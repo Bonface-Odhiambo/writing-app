@@ -2,6 +2,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { getSEOTags } from "../app/lib/seo";
+import { Providers } from "./providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,7 +31,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Providers>
           {children}
+        </Providers>
       </body>
     </html>
   );

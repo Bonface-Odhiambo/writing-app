@@ -21,10 +21,10 @@
       "@/*": ["./*"],
       "@/components/*": ["./app/components/*"],
       "@/context/*": ["./app/context/*"],
-      "@/types/*": ["./app/types/*"],
+      "@/types/*": ["./types/*", "./app/types/*"],
       "@/hooks/*": ["./app/hooks/*"],
       "@/services/*": ["./app/services/*"],
-      "@/lib/*": ["./app/lib/*"]
+      "@/lib/*": ["./lib/*", "./app/lib/*"]
     },
     "baseUrl": ".",
     "target": "es5",
