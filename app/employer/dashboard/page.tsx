@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Button } from "@/components/button";
+import DashboardNav from "@/components/dashboard-nav";
 
 export default function EmployerDashboard() {
   const { data: session, status } = useSession();
@@ -27,14 +28,7 @@ export default function EmployerDashboard() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-slate-900">Employer Dashboard</h1>
-          <Button onClick={() => router.push("/sign-out")} color="blue">
-            Sign Out
-          </Button>
-        </div>
-      </header>
+      <DashboardNav role="employer" />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
