@@ -1,6 +1,6 @@
 // app/components/DashboardTest.tsx
 import React, { useState, useEffect } from 'react';
-import { Socket, io } from 'socket.io-client';
+// import { Socket, io } from 'socket.io-client';
 // import api from '@/lib/api';
 // import { supabase } from '@/lib/supabase';
 
@@ -46,7 +46,7 @@ const dashboardFeatures: Record<string, DashboardFeature[]> = {
 const DashboardTest = () => {
   const [userRole, setUserRole] = useState<string>('');
   const [testResults, setTestResults] = useState<Record<string, TestResult>>({});
-  const [socket, setSocket] = useState<Socket | null>(null);
+  // const [socket, setSocket] = useState<Socket | null>(null);
   const [socketStatus, setSocketStatus] = useState<TestResult>({ 
     status: 'pending', 
     message: 'Not connected' 
@@ -127,9 +127,9 @@ const DashboardTest = () => {
     }
 
     return () => {
-      if (socket) {
-        socket.disconnect();
-      }
+      // if (socket) {
+      //   socket.disconnect();
+      // }
     };
   }, [userRole]);
 
