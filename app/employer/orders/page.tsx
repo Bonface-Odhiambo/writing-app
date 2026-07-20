@@ -32,12 +32,6 @@ export default function EmployerOrdersPage() {
     }
   }, [status, session, router]);
 
-  useEffect(() => {
-    if (status === "authenticated") {
-      fetchOrders();
-    }
-  }, [status, filter]);
-
   const fetchOrders = async () => {
     try {
       const statusFilter = filter === "all" ? "" : filter;
@@ -52,6 +46,13 @@ export default function EmployerOrdersPage() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      fetchOrders();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, filter]);
 
   const getStatusColor = (status: string) => {
     switch (status) {

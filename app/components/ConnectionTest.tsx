@@ -179,6 +179,7 @@ const ConnectionTest: React.FC = () => {
                 socket.disconnect();
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userRole]);
 
     // Test socket message

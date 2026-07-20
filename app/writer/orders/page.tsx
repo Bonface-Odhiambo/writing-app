@@ -32,12 +32,6 @@ export default function WriterOrdersPage() {
     }
   }, [status, session, router]);
 
-  useEffect(() => {
-    if (status === "authenticated") {
-      fetchOrders();
-    }
-  }, [status, filter]);
-
   const fetchOrders = async () => {
     try {
       const response = await fetch(`/api/orders?status=${filter}`);
@@ -51,6 +45,13 @@ export default function WriterOrdersPage() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      fetchOrders();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, filter]);
 
   const handleAcceptOrder = async (orderId: string) => {
     try {

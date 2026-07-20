@@ -75,7 +75,7 @@ export async function GET(request: Request) {
     }
 
     return NextResponse.json(orders);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -115,7 +115,7 @@ export async function POST(request: Request) {
     };
 
     return NextResponse.json(newOrder, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
