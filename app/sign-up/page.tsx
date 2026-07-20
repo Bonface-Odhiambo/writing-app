@@ -6,10 +6,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/button";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
 export default function SignUpPage() {
   const router = useRouter();
   const [name, setName] = useState("");
@@ -23,6 +19,17 @@ export default function SignUpPage() {
     e.preventDefault();
     setError("");
     setLoading(true);
+
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+    if (!supabaseUrl || !supabaseAnonKey) {
+      setError("Server configuration error");
+      setLoading(false);
+      return;
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
     try {
       const { error } = await supabase.auth.signUp({

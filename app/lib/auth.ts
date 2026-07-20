@@ -2,11 +2,6 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
-
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
-
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -19,6 +14,15 @@ export const authOptions: NextAuthOptions = {
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Invalid credentials");
         }
+
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+        const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+
+        if (!supabaseUrl || !supabaseServiceKey) {
+          throw new Error("Server configuration error");
+        }
+
+        const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
         try {
           const { data, error } = await supabase.auth.signInWithPassword({
