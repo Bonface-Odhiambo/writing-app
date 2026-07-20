@@ -144,7 +144,7 @@ export default function ProfilePage() {
               Danger Zone
             </h2>
             <p className="text-sm text-slate-600 mb-4">
-              Once you sign out, you'll need to sign in again to access your account.
+              Once you sign out, you&apos;ll need to sign in again to access your account.
             </p>
             <Button
               onClick={handleSignOut}
