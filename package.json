@@ -44,15 +44,16 @@
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.1.2",
     "recharts": "^2.13.3",
-    "socket.io": "^4.8.1",
-    "socket.io-client": "^4.8.1",
+    "socket.io": "^4.8.2",
+    "socket.io-client": "^4.8.2",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
   },
   "overrides": {
     "nodemailer": "^9.0.1",
-    "brace-expansion": "^2.0.1"
+    "brace-expansion": "^2.0.1",
+    "socket.io-parser": "^4.2.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.2",
